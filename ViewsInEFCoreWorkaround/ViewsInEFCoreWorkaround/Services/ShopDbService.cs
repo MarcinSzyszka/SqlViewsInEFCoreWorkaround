@@ -31,7 +31,7 @@ namespace ViewsInEFCoreWorkaround.Services
 
 		public IEnumerable<CategoryWithOneProductSqlView> GetDataForMainPageFromCategoryWithOneProductSqlView()
 		{
-			var data = this.shopContext.CategoryWithOneProductSqlView.FromSql("SELECT DISTINCT * FROM dbo.CategoryWithOneProductSqlView_Sql");
+			var data = this.shopContext.CategoryWithOneProductSqlView.FromSql("SELECT * FROM dbo.CategoryWithOneProductSqlView_Sql");
 
 			return data;
 		}

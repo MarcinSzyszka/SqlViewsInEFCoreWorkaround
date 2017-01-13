@@ -22,11 +22,13 @@ namespace ViewsInEFCoreWorkaround.Tests
 
 			//Act
 			stoper.Start();
+
 			var dataForMainPage = shopService.GetDataForMainPageFromCategoryWithOneProductSqlView()
 																					.Where(d => d.IsMinPhoto)
 																					.GroupBy(c => c.CategoryId)
 																					.Select(d => d.First())
 																					.ToList();
+
 			stoper.Stop();
 			var time = stoper.Elapsed;
 
